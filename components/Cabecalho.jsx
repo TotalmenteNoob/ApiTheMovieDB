@@ -10,8 +10,7 @@ const Cabecalho = (props) => {
         <Container>
           <Navbar.Brand href="/">Home</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/filmes/">populares</Nav.Link>
-            <Nav.Link href="objeto">todos os filmes</Nav.Link>
+            <Nav.Link href="/filmes/">Populares</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
