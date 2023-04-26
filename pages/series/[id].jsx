@@ -73,10 +73,10 @@ export default Detalhes;
 export async function getServerSideProps(context) {
   const id = context.params.id; //o 'context.params é padrão do axios assim como o .data, já o id tem que ser o mesmo nome do arquivo'
 
-  const resultado = await apiFilmes.get("/movie/" + id);
+  const resultado = await apiFilmes.get("/tv/" + id);
   const filme = resultado.data;
 
-  const resultadoAtores = await apiFilmes.get("/movie/" + id + "/credits");
+  const resultadoAtores = await apiFilmes.get("/tv/" + id + "/credits");
   const atores = resultadoAtores.data.cast;
 
   return {

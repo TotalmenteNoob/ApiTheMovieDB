@@ -5,7 +5,7 @@ import apiFilmes from "@/services/apiFilmes";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Link from "next/link";
 
-const Atores = ({ ator, fotos, filmes, series}) => {
+const Atores = ({ ator, fotos, filmes, series }) => {
   const data = new Date(ator.birthday);
   const dataFormatada = data.toLocaleDateString("pt-BR");
   return (
@@ -36,7 +36,7 @@ const Atores = ({ ator, fotos, filmes, series}) => {
         <Row>
           {fotos.map(item => (
             <Col md={2} className="my-1">
-                <Card.Img variant="top" src = {"https://image.tmdb.org/t/p/w500/" + item.file_path}></Card.Img>
+              <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500/" + item.file_path}></Card.Img>
             </Col>
           ))}
         </Row>
@@ -44,21 +44,23 @@ const Atores = ({ ator, fotos, filmes, series}) => {
           <strong>Filmes</strong>
         </h2>
         <Row>
-            {filmes.map(item =>(
+          {filmes.map(item => (
             <Col md={2} className="my-1">
-                <Link href={"/filmes/" + item.id}><Card.Img variant="top" src = {"https://image.tmdb.org/t/p/w500/" + item.poster_path}></Card.Img></Link>
+              <Link href={"/filmes/" + item.id}><Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500/" + item.poster_path}></Card.Img></Link>
             </Col>
-            ))}
+          ))}
         </Row>
         <h2 className="mt-5">
           <strong>Séries</strong>
         </h2>
         <Row>
-            {series.map(item=>(
-                <Col md={2} className="my-1">
-                    <Card.Img variant="top" src = {"https://image.tmdb.org/t/p/w500/" + item.poster_path}></Card.Img>
-                </Col>
-            ))}
+          {series.map(item => (
+            <Col md={2} className="my-1">
+              <Link Link href={"/series/" + item.id}>
+                <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500/" + item.poster_path}></Card.Img>
+              </Link>
+            </Col>
+          ))}
         </Row>
       </Container>
     </Pagina>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 
 
 const Cabecalho = (props) => {
@@ -10,7 +10,16 @@ const Cabecalho = (props) => {
         <Container>
           <Navbar.Brand href="/">Home</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/filmes/">Populares</Nav.Link>
+          <NavDropdown title="Filmes" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/filmes/populares/">Populares</NavDropdown.Item>
+              <NavDropdown.Item href="/filmes/lancamento/">
+                Lançamento
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/filmes/maisvotados/">Mais votados</NavDropdown.Item>
+              <NavDropdown.Item href="/filmes/emcartaz/">
+                Em cartaz
+              </NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Container>
       </Navbar>

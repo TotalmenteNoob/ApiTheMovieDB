@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Pagina from '../../components/Pagina';
-import apiFilmes from '../../services/apiFilmes';
+import Pagina from '../../../components/Pagina';
+import apiFilmes from '../../../services/apiFilmes';
 import Link from 'next/link';
 
 const index = ({filmes}) => {
@@ -31,7 +31,7 @@ export default index
 
 export async function getServerSideProps(context) {
 
-    const resultado = await apiFilmes.get('/movie/now_playing')
+    const resultado = await apiFilmes.get('/movie/top_rated')
     const filmes = resultado.data.results
 
     return {
