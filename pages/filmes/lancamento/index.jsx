@@ -8,7 +8,7 @@ import Link from 'next/link';
 const index = ({filmes}) => {
 
     return (
-        <Pagina titulo="Filmes populares">
+        <Pagina titulo="Lançamentos">
             <Container className='d-flex flex-row flex-wrap justify-content-center'>
                 {filmes.map(item => (
                     <div className='m-1 card bg-secondary border-0' style={{ width: '15rem' }}>

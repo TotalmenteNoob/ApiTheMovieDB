@@ -4,6 +4,7 @@ import Pagina from "@/components/Pagina";
 import apiFilmes from "@/services/apiFilmes";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Link from "next/link";
+import Fotos from "@/components/Fotos";
 
 const Atores = ({ ator, fotos, filmes, series }) => {
   const data = new Date(ator.birthday);
@@ -30,16 +31,11 @@ const Atores = ({ ator, fotos, filmes, series }) => {
             <p className="fs-3">{ator.biography}</p>
           </Col>
         </Row>
-        <h2 className="mt-5">
-          <strong>Mais fotos</strong>
-        </h2>
-        <Row>
-          {fotos.map(item => (
-            <Col md={2} className="my-1">
-              <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500/" + item.file_path}></Card.Img>
-            </Col>
-          ))}
-        </Row>
+
+        <Fotos titulo="Mais fotos" lista={fotos} foto="file_path"></Fotos>
+        <Fotos titulo="Filmes" lista={filmes} foto="poster_path"></Fotos>
+        <Fotos titulo="Séries" lista={series} foto="poster_path"></Fotos>
+
         <h2 className="mt-5">
           <strong>Filmes</strong>
         </h2>
